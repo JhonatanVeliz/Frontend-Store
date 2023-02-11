@@ -1,0 +1,330 @@
+/* BACKGROUND */
+/* body{
+    background: url(../assets/bk.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+body {
+    background-color: rgb(124, 30, 170);
+}
+
+/* GLOBALES */
+
+img {
+    width: auto;
+}
+
+                                /* CUSTOM PROPERTIES */
+:root{
+    --text-bold: 'Staatliches', sans-serif;
+    --text-primary: 'Roboto', sans-serif;
+    --color-orange: rgb(238, 115, 33);
+    --color-title: rgb(247, 202, 1);
+    --color-aqua: rgba(0, 206, 206, 0.829);
+    --color-white: #fff;;
+    --color-nav: rgba(2, 2, 2, 0.795);
+}
+
+                                    /* MENU HAMBURGESA */
+.visibled,
+.disibled {
+    color: var(--color-white);
+    z-index: 1;
+    display: none;
+    font-size: 2.5rem;
+}
+
+                                            /* HEADER */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000fb;
+    position: relative;
+}
+
+.header-top {
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid #ffffff67;
+}
+
+.header-top__img {
+    width: 18rem;
+}
+
+.header__nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: .3s;
+}
+
+.nav {
+    background-color: var(--color-nav);
+}
+
+.nav__container {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: .3s;
+}
+
+.nav__link {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    font-family: var(--text-primary);
+    border-bottom: 1px solid transparent;
+}
+
+.nav__link:hover{
+    border-bottom: 1px solid var(--color-orange);
+}
+
+.nav__link--active {
+    border-bottom: 1px solid var(--color-aqua);
+}
+
+.nav__link:hover {
+    background-color: var(--color-orange);
+}
+
+                        /*--------------- LAYOUT ----------------*/
+
+.layout {
+    width: 90%;
+    margin: 3.5rem auto;
+}
+
+.title {
+    font-family: var(--text-bold);
+    margin: 5rem 0;
+    text-align: center;
+    color: var(--color-title);
+}
+
+.text{
+    font-family: var(--text-primary);
+}
+
+.layout-container {
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "area1 area2 area3"
+        "area4 area4 area5"
+        "area6 area7 area8"
+        "area9 area10 area10";
+    gap: 1rem;
+}
+
+.producto-container {
+    background: #0000006c;
+    padding: 1.5rem;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: .3s;
+}
+
+.producto-container:hover {
+    border: 1px solid rgba(0, 206, 206, 0.664);
+    transform: scale(.98);
+}
+
+.producto__link {
+    display: block;
+    width: 100%;
+}
+
+.producto__img {
+    width: 100%;
+}
+
+.producto__inf {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.producto__name {
+    font-family: var(--text-bold);
+    font-size: 2rem;
+    color: var(--color-title);
+}
+
+.producto__price {
+    padding-top: .5rem;
+    font-size: 1.5rem;
+    color: var(--color-white);
+}
+
+.anuncio:hover{
+    transform: none;
+}
+.anuncio--1 {
+    grid-area: area4;
+    background: url(../assets/grafico1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.anuncio--2 {
+    grid-area: area10;
+    background: url(../assets/grafico2.jpg);
+    background-position-x: right -20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #0000007c;
+    padding: 2rem;
+    text-align: center;
+    min-height: 10vh;
+    max-height: auto;
+}
+
+.footer__text {
+    font-family: var(--text-primary);
+    font-size: 2rem;
+    color: var(--color-white);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+
+/* --------- MEDIAQUERIS -------- */
+@media screen and (max-width: 670px) {
+    .nav__link {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .nav__link {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .visibled {
+        display: block;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .visibled:hover {
+        transform: scale(1.2);
+    }
+
+    .disibled {
+        display: grid;
+        place-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: var(--color-white);
+        color: var(--color-nav);
+        position: absolute;
+        cursor: pointer;
+        top: 2.8rem;
+        right: 2rem;
+        z-index: 6;
+        font-size: 1.3rem;
+    }
+    .disibled:hover{
+        transform: scale(1.1);
+        transition: .3s;
+    }
+
+    .header-top {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: transparent;
+    }
+
+    .header-top__img {
+        width: 10rem;
+    }
+
+    .header__nav {
+        width: 70%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: #000000d3;
+        z-index: 2;
+    }
+
+    .nav__container {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav__link {
+        display: block;
+        width: 90%;
+        font-size: 2rem;
+        border-bottom: none;
+    }
+
+    .nav__link:hover {
+        background-color: transparent;
+        border-bottom: none;
+        color: rgba(0, 206, 206, 0.829);
+        transform: scale(1.2);
+    }
+
+    .nav__link--active {
+        border-bottom: none;
+        text-decoration: underline;
+    }
+
+    .layout-container {
+        grid-template-areas:
+            "area1 area2"
+            "area4 area4"
+            "area3 area5"
+            "area6 area7"
+            "area8 area9"
+            "area10 area10";
+    }
+    .anuncio{
+        height: 25rem;
+        position: relative;
+        padding: 0;
+        border: transparent;
+    }
+    .anuncio:hover{
+        border: transparent;
+    }
+    .anuncio::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #000000a8;
+    }
+    .footer__text{
+        font-size: 1.7rem;
+    }
+}
